@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "Taller-Sotomoto"
+  "defaultProject": "Taller-Sotomoto",
+  "cli": {
+    "analytics": false
+  }
 }
