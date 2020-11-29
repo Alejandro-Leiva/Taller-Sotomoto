@@ -1,0 +1,88 @@
+<form [formGroup]="contactForm" (ngSubmit)="sendForm()">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputName4">Nombre</label>
+      <input type="text" class="form-control" formControlName="name"  id="inputName4" placeholder="Nombre">
+      <div *ngIf='name.invalid && (name.dirty || name.touched )'>
+        <div class="text-danger" *ngIf='name.errors.required'>
+          Por favor, escribe tu nombre
+        </div>
+        <div class="text-danger" *ngIf='name.errors.minlength'>
+          El nombre tiene que tener al menos 2 letras
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPhone4">Teléfono</label>
+      <input type="tel" class="form-control" formControlName="phone" id="inputPhone4" placeholder="Teléfono">
+      <div *ngIf='phone.invalid && (phone.dirty || phone.touched )'>
+      <div class="text-danger" *ngIf='phone.errors.required'>
+        Por favor, introduzca su teléfono
+      </div>
+      <div class="text-danger" *ngIf='phone.errors.minlength'>
+        El teléfono debe de estar compuesto por 9 dígitos
+      </div>
+      <div class="text-danger" *ngIf='phone.errors.maxlength'>
+        El teléfono debe de estar compuesto por 9 dígitos
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-3">
+    <label for="inputEmail">Email</label>
+    <input type="email" class="form-control" formControlName="email" id="inputEmail" placeholder="Email">
+    <div *ngIf='email.invalid && (email.dirty || email.touched )'>
+    <div class="text-danger" *ngIf='email.errors.required'>
+      Por favor, introduzca su email
+    </div>
+    <div class="text-danger" *ngIf='email.errors.pattern'>
+      Por favor, introduzca un email válido
+    </div>
+  </div>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="inputSubject">Asunto</label>
+    <input type="text" class="form-control" formControlName="subject" id="inputSubject" placeholder="Asunto">
+    <div *ngIf='subject.invalid && (subject.dirty || subject.touched )'>
+    <div class="text-danger" *ngIf='subject.errors.required'>
+      Por favor, rellene el campo Asunto
+    </div>
+    <div class="text-danger" *ngIf='subject.errors.minlength'>
+      El asunto debe tener al menos 5 caracteres
+    </div>
+    <div class="text-danger" *ngIf='subject.errors.maxlength'>
+      El asunto no puede tener mas de 30 caracteres
+    </div>
+  </div>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="inputMessage2">Mensaje</label>
+    <textarea class="form-control" formControlName="message" id="inputMessage2" placeholder=""></textarea>
+    <div *ngIf='message.invalid && (message.dirty || message.touched )'>
+    <div class="text-danger" *ngIf='message.errors.required'>
+      Por favor, rellene el campo Mensaje
+    </div>
+    <div class="text-danger" *ngIf='message.errors.maxlength'>
+      El campo mensaje no puede tener más de 100 caracteres
+    </div>
+  </div>
+  </div>
+  <div class="form-group-row">
+    <label class="col-sm-12 col-form-label text-sm-left">Términos y Condiciones</label>
+    <label class="col-sm-2 col-form-label text-sm-left">
+        <input type="checkbox" formControlName="checkbox"> Aceptar</label>
+        <div *ngIf='checkbox.invalid && (checkbox.dirty || checkbox.touched )'>
+        <div class="col-sm-4 text-danger" *ngIf="checkbox.errors?.required">
+            Debes aceptar nuestros Términos y Condiciones
+        </div>
+      </div>
+</div>
+  <div class="form-group-row">
+    <div class="col-sm-12 mb-20">
+      <button type="button" class="btn btn-danger" >Enviar</button>
+    </div>
+  </div>
+
+  </form>
