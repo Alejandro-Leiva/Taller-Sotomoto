@@ -7,6 +7,9 @@ import { HomeComponent } from './Componentes/home/home.component';
 import { ContactoComponent } from './Componentes/contacto/contacto.component';
 import { TiendaComponent } from './Componentes/tienda/tienda.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule

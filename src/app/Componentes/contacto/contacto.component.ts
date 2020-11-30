@@ -10,6 +10,8 @@ export class ContactoComponent implements OnInit {
 
   contactForm: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ // private phonePattern: any = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+  private phonePattern: any = "";
 
   constructor() {
     this.contactForm = this.createFormGroup();
@@ -21,8 +23,8 @@ export class ContactoComponent implements OnInit {
   createFormGroup(){
     return new FormGroup({
       name: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(2)]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
-      email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(this.emailPattern)]),
+      phone: new FormControl('', [Validators.required, Validators.pattern(this.phonePattern)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       subject: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
       message: new FormControl('', [Validators.required, Validators.maxLength(100)]),
       checkbox: new FormControl(false, [Validators.requiredTrue])
@@ -39,8 +41,9 @@ export class ContactoComponent implements OnInit {
     console.log(this.contactForm.controls['email'].value);
     console.log(this.contactForm.controls['message'].value);
     console.log(this.contactForm.controls['subject'].value);
-    window.location.href = 'mailto:' + this.contactForm.controls['email'].value +
-    this.contactForm.controls['subject'].value + this.contactForm.controls['name'].value + '?body' + this.contactForm.controls['message'].value;
+    window.location.href = 'mailto:' + this.contactForm.controls['email'].value + 'subject:' +
+    this.contactForm.controls['subject'].value + 'body:' + this.contactForm.controls['name'].value +
+    this.contactForm.controls['message'].value + this.contactForm.controls['phone'];
 
     if(this.contactForm.valid){
       console.log('Message sended');

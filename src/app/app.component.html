@@ -1,16 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
-  <a class="navbar-brand" href="#">Taller Sotomoto</a>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/']">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/tienda']">Tienda</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/contacto']">Contacto</a>
-    </li>
-  </ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    Taller Sotomoto
+  </a>
+  <div class="collapse navbar-collapse mr-auto" id="navbarTogglerDemo01">
+    <div class="navbar-nav mr-auto text-center">
+      <a class="nav-item nav-link" [routerLink]="['/']" routerLinkActive="active">Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLink]="['/tienda']" routerLinkActive="active">Tienda</a>
+      <a class="nav-item nav-link" [routerLink]="['/contacto']" routerLinkActive="active">Contacto</a>
+    </div>
+  </div>
 </nav>
 <div class="container">
   <router-outlet></router-outlet>
