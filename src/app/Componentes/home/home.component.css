@@ -1,0 +1,33 @@
+#myCarousel img{
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card{
+  border-color: rgb(155, 30, 30);
+}
+
+.rounded{
+  display: block;
+  margin: auto;
+}
+
+.col-lg-4 h2{
+  text-align: center;
+}
+
+.col-lg-4 p{
+  text-align: justify;
+  margin: 5px;
+}
+
+.col-lg-4 .btn {
+  background-color: rgb(155, 30, 30);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lead{
+  text-align: justify;
+}

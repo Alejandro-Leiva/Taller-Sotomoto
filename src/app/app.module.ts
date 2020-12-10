@@ -11,15 +11,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from "@angular/common/http";
-import { GoogleMapComponent } from './Componentes/google-map/google-map.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactoComponent,
-    TiendaComponent,
-    GoogleMapComponent
+    TiendaComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +27,7 @@ import { GoogleMapComponent } from './Componentes/google-map/google-map.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
