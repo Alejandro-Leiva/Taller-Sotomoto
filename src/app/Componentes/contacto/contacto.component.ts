@@ -37,34 +37,8 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*createFormGroup(){
-    return new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(2)]),
-      phone: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(this.emailPattern)]),
-      message: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-    });
-  }*/
-
- /* resetForm(){
-    this.contactForm.reset();
-  }*/
 
   sendForm(){
-   /* console.log('Sending form');
-    console.log(this.contactForm.controls['name'].value);
-    console.log(this.contactForm.controls['phone'].value);
-    console.log(this.contactForm.controls['email'].value);
-    console.log(this.contactForm.controls['message'].value);
-    window.location.href = 'mailto: ' + this.contactForm.controls['email'] + 'body: ' + this.contactForm.controls['name'].value + "" +
-    this.contactForm.controls['message'].value + "" + this.contactForm.controls['phone'];
-
-    if(this.contactForm.valid){
-      console.log('Message sended');
-    }
-    else {
-      console.log('Error');
-    }*/
 
     if (this.form.status == "VALID" && this.honeypot.value == ""){
       this.form.disable();
@@ -99,29 +73,4 @@ export class ContactoComponent implements OnInit {
     }
 
   }
-/*
-  get name(){
-    return this.contactForm.get('name')
-  }
-
-  get phone(){
-    return this.contactForm.get('phone')
-  }
-
-  get email(){
-    return this.contactForm.get('email')
-  }
-
-  get subject(){
-    return this.contactForm.get('subject')
-  }
-
-  get message(){
-    return this.contactForm.get('message')
-  }
-
-  get checkbox(){
-    return this.contactForm.get('checkbox')
-  }
-*/
 }

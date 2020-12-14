@@ -1,10 +1,5 @@
-#myCarousel img{
+.carousel {
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.card{
-  border-color: rgb(155, 30, 30);
 }
 
 .rounded{
