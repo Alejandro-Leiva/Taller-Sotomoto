@@ -10,7 +10,7 @@ export class TiendaComponent implements OnInit {
 
   filtroBusqueda: string = "";
 
-  public catalogo: CatalogoTienda[] = [
+  catalogo: CatalogoTienda[] = [
     {
       title: "moto",
       description: "Moto de segunda mano",
