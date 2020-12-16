@@ -1,17 +1,15 @@
-
- <section class="jumbotron text-center">
+<div class="container">
+ <section class="jumbotron text-center ">
   <div class="container">
-    <h1 class="jumbotron-heading">Album example</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-    <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-    </p>
+    <h1 class="jumbotron-heading">Nuestra Tienda</h1>
+    <p class="lead text-muted">Podrás encontrar motos de segunda mano, repuestos de todas clases y accesorios como cascos, guantes... ¡Todo al mejor precio!</p>
+    <p class="lead text-muted">Contacta con nosotros por email o llamando por teléfono</p>
   </div>
 </section>
+</div>
 
       <!-- Search form -->
-<div class="md-form mt-0 mt-5 mb-5">
+<div class="md-form mt-0 mt-5 mb-5 mr-5 ml-5">
   <input class="form-control" type="text" [(ngModel)] = "filtroBusqueda" placeholder="Search" aria-label="Search">
 </div>
 <!-- Buttons categories -->
@@ -30,14 +28,14 @@
     <div class="row">
       <div class="col-md-4"  *ngFor="let catalogo of catalogo | filtroTienda: filtroBusqueda">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" data-src={{catalogo.image}} alt="Card image cap">
+          <img class="card-img-top"  style="height: 250px;" src={{catalogo.image}} alt="Card image cap">
           <div class="card-body" >
             <h5 class="card-title" >{{catalogo.title}}</h5>
             <p class="card-text">{{catalogo.description}}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <a class="btn btn-sm btn-outline-secondary" href="tel:+34636786185">Llamar</a>
+                <a  class="btn btn-sm btn-outline-secondary" [routerLink]="['/contacto']">Email</a>
               </div>
             </div>
           </div>

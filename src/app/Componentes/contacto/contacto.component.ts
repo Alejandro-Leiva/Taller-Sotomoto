@@ -12,7 +12,7 @@ export class ContactoComponent implements OnInit {
 
   form: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
- // private phonePattern: any = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+  //private phonePattern: any = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
 
  name: FormControl = new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(2)]);
  phone: FormControl = new FormControl('', [Validators.required]);
@@ -53,7 +53,7 @@ export class ContactoComponent implements OnInit {
       this.http.post("https://script.google.com/macros/s/AKfycbxuDmyCWUhUF-8Rk3GgWnRcIPItsNxZB7EhZQeJTW5dO1BcrYk/exec", formData).subscribe(
         (response) => {
           if (response["result"] == "success"){
-            this.responseMessage ="Gracias por el mensaje";
+            this.responseMessage ="¡Tu email ha sido enviado! Nos pondremos en contacto contigo lo antes posible";
           } else{
             this.responseMessage = "Ha habido un error al enviar el mensaje, prueba de nuevo";
           }
@@ -70,7 +70,12 @@ export class ContactoComponent implements OnInit {
           console.log(error);
         }
       );
+      this.resetForm();
     }
 
+  }
+
+  resetForm(){
+    this.form.reset();
   }
 }

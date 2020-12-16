@@ -1,3 +1,8 @@
+#formulario{
+  display: block;
+  justify-content: center;
+}
+
 .card border-primary{
   background-color: rgb(155, 30, 30);
 }

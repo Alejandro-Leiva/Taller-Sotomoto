@@ -14,47 +14,47 @@ export class TiendaComponent implements OnInit {
     {
       title: "moto",
       description: "Moto de segunda mano",
-      image: ""
+      image: "assets/imgs/catalogo/moto1.jpg"
     },
     {
       title: "moto",
       description: "Moto de segunda mano",
-      image: ""
+      image: "assets/imgs/catalogo/moto2.jpg"
     },
     {
       title: "moto",
       description: "Moto de segunda mano",
-      image: ""
+      image: "assets/imgs/catalogo/moto3.jpg"
     },
     {
       title: "Repuesto",
       description: "Piezas",
-      image: ""
+      image: "assets/imgs/catalogo/neumatico.jpg"
     },
     {
       title: "Repuesto",
       description: "Piezas",
-      image: ""
+      image: "assets/imgs/catalogo/neumatico.jpg"
     },
     {
       title: "Repuesto",
       description: "Piezas",
-      image: ""
+      image: "assets/imgs/catalogo/neumatico.jpg"
     },
     {
       title: "Accesorios",
       description: "Cascos",
-      image: ""
+      image: "assets/imgs/catalogo/casco1.jpg"
     },
     {
       title: "Accesorios",
       description: "Cascos",
-      image: ""
+      image: "assets/imgs/catalogo/casco2.jpg"
     },
     {
       title: "Accesorios",
       description: "Cascos",
-      image: ""
+      image: "assets/imgs/catalogo/casco3.jpg"
     }
   ];
 

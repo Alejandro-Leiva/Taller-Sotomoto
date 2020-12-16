@@ -2,10 +2,18 @@
   background-color: rgb(155, 30, 30);
 }
 
-.textFooter{
+.page-footer{
+  background: linear-gradient(to bottom right, rgb(155, 30, 30), black);
+}
+
+#titleFooter{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#parrafosFooter p{
   color: white;
 }
 
-.icons{
-  color: white;
-}
+
